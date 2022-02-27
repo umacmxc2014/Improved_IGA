@@ -25,8 +25,8 @@ tEnd = clock;
 
 end
 format short e
-disp('The degree of NURBS basis is ')
-disp(pu+t)
+ disp('The degree of NURBS basis is ')
+ disp(pu+t)
  disp('================================================================')
  disp(['The L2 norm error            ||       The H1 norm error'  ])
  
