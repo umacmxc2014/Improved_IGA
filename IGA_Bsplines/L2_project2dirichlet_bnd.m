@@ -4,9 +4,9 @@ function [err,u_h] = L2_project2dirichlet_bnd(ConPts,knotU,weights,p, Ubar,wbar,
 
 wbar=wbar'; %注意到，这里的权系数需要是行向量.
 
-addpath('~/Codes/IGA_Codes/IGA_needed_Bsplines/IGA_Grid_data/')
-addpath('~/Codes/IGA_Codes/IGA_needed_Bsplines/NURBS/')
-addpath('~/Codes/IGA_Codes/IGA_needed_Bsplines/quadrature/')
+addpath('./IGA_Grid_data/')
+addpath('./NURBS/')
+addpath('./quadrature/')
 
 
 
