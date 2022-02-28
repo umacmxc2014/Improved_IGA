@@ -9,7 +9,7 @@
 
 if strcmp(test_case, 'square')
 
-%% Case I.
+%% Case I: the domain is an unit square.
 % The physical domain for example is $[0,1]^2$.
 
 
@@ -54,7 +54,7 @@ end
 if strcmp(test_case, 'quarter' )
 
 %% Case II.
-% The physical domain for example is a quarter.
+% The physical domain  is a quarter annulus.
 
 
 t=3 ;
@@ -67,7 +67,7 @@ weights=[2 2 2;1 1 1;1 1 1];
  knotU=[0 0  0 1 1 1];knotV=[0 0 0 1 1 1];
 pu=2;pv=2;
 
-Refinement=7*ones(1,5);
+Refinement=[2,3,4,5,6];
 
 n_refine=length(Refinement);
 
