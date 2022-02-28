@@ -17,15 +17,10 @@ function [err,n_dof]=Iga2d_biharmonic(ConPts,weights,knotU,pu,knotV,pv,Refinemen
 % The test_case can be a 'square' and the 'quarter annulus' .
 
 %=====================  
-addpath('~/Codes/IGA_Codes/IGA_needed_Bsplines/IGA_Grid_data/')
-addpath('~/Codes/IGA_Codes/IGA_needed_Bsplines/NURBS/')
-addpath('~/Codes/IGA_Codes/IGA_needed_Bsplines/quadrature/')
-% r=@(x,y)2*(x.^2+y.^2-1);
-% u_Exact=@(x,y) (1-cos(r(x,y)))/2; ;% Exact solution of Poisson equation;
-% f=@(x,y) 8*( (3-16*x.^4)*cos(r(x,y)) -24*x^2*sin(r(x,y))) + ...
-%         8*( (3-16*y^4)*cos(r(x,y)) -24*y^2*sin(r(x,y))) + ...     ;
-%         2*( 8*( (1-16*x.^2*y.^2)*cos(r(x,y)) - 4*(x.^2 + y.^2)*sin(r(x,y))  ) );
-% The right hand side of the 2D biharmonic equation; 
+addpath('./IGA_Grid_data/')
+addpath('./NURBS/')
+addpath('./quadrature/')
+
 
 
 
