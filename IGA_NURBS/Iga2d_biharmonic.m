@@ -17,33 +17,15 @@ function [err,dof]=Iga2d_biharmonic(ConPts,weights,knotU,pu,knotV,pv,Refinement,
 % The test_case can 'square' and the 'quarter' .
 
 %=====================  
-addpath('~/Codes/IGA_Codes/IGA_needed_NURBS/IGA_Grid_data/')
-addpath('~/Codes/IGA_Codes/IGA_needed_NURBS/NURBS/')
-addpath('~/Codes/IGA_Codes/IGA_needed_NURBS/quadrature/')
+addpath('./IGA_Grid_data/')
+addpath('./NURBS/')
+addpath('./quadrature/')
 
-% r=@(x,y)2*(x.^2+y.^2-1);
-% u_Exact=@(x,y) (1-cos(r(x,y)))/2; ;% Exact solution of Poisson equation;
-% f=@(x,y) 8*( (3-16*x.^4)*cos(r(x,y)) -24*x^2*sin(r(x,y))) + ...
-%         8*( (3-16*y^4)*cos(r(x,y)) -24*y^2*sin(r(x,y))) + ...     ;
-%         2*( 8*( (1-16*x.^2*y.^2)*cos(r(x,y)) - 4*(x.^2 + y.^2)*sin(r(x,y))  ) );
-% The right hand side of the 2D biharmonic equation; 
 
 
 
  
 if   strcmp(test_case,'square')
-
-% pi_4 =pi^4;
-
-% u_Exact=@(x,y) sin(pi*x).*sin(pi*x).*sin(pi*(y-1)).*sin(pi*(y-1));
-% f=@(x,y) -8*pi_4*cos(2*pi*x).*sin(pi*(y-1)).*sin(pi*(y-1))+8*pi_4*cos(2*pi*x).*cos(2*pi*(y-1)) - ...
-%         8*pi_4*sin(pi*x).*sin(pi*x).*cos(2*pi*(y-1));
-
-% g1=@(x,y) sin(pi*x).*sin(pi*x).*sin(pi*(y-1)).*sin(pi*(y-1)); % 在y=0处，u =g1;
-
-% g2=@(x,y) -sin(pi*x).*sin(pi*x).*pi*sin(2*pi*(y-1)); % 在y=0的边界上，梯度u点乘n等于g2;
-
-
 
 u_Exact=@(x,y) sin(pi*x).*sin(pi*x).*(y-1).^4;
 f=@(x,y) -8*( pi^4*cos(2*pi*x).*(y-1).^4 - 6*pi*pi*cos(2*pi*x).*(y-1).^2 ...
