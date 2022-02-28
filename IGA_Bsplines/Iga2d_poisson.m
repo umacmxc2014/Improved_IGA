@@ -15,9 +15,9 @@ function [err,dof]=Iga2d_poisson(ConPts,weights,knotU,pu,knotV,pv,Refinement,t, 
 % ultimate degree of NURBS  basis functions is (pu+t) in u direction, and
 % (pv+t) in the v direction;
 
-addpath('~/Codes/IGA_Codes/IGA_needed_Bsplines/IGA_Grid_data/')
-addpath('~/Codes/IGA_Codes/IGA_needed_Bsplines/NURBS/')
-addpath('~/Codes/IGA_Codes/IGA_needed_Bsplines/quadrature/')
+addpath('./IGA_Grid_data/')
+addpath('./NURBS/')
+addpath('./quadrature/')
 
 
 
