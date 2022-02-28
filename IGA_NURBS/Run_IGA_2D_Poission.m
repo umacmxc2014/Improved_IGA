@@ -47,7 +47,7 @@ disp('-----------------------------------------------------------------')
 
 end
 
-%% Case I: quarter domain
+%% Case II: quarter domain
 
 if strcmp(test_case,'quarter')
 
