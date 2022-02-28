@@ -6,7 +6,7 @@ format short e
 
 if strcmp(test_case,'rectangle')
 
-t=0;  % Modify the degree of the Basis functions.
+t=0;  % Modify the degree of the Basis functions, the ultimate degrees are (pu+t) and (pv+t).
 
 pu=1;pv=1;
 
