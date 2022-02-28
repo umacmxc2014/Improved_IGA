@@ -3,27 +3,11 @@ function [err,u_h] = L2_project2dirichlet_bnd(ConPts,knotU,weights,p, Ubar,wbar,
 
 wbar=wbar'; %注意到，这里的权系数需要是行向量.
 
-addpath('~/Codes/IGA_Codes/IGA_needed_NURBS/IGA_Grid_data/')
-addpath('~/Codes/IGA_Codes/IGA_needed_NURBS/NURBS/')
-addpath('~/Codes/IGA_Codes/IGA_needed_NURBS/quadrature/')
-
-% ConPts=[0 1 1;0 1 0];
-% a=sqrt(2)/2;
-% weights=[1 a 1];
-% p=2;
-% U=[0 0 0 1 1 1];
-% u_d=@(x,y)sin(pi*x).*sin(pi*y);
-
-% u_exact=@(x,y)sin(pi*x)*sin(pi*y);
-
-% Refinement=5;
-
-% [Ubar,wbar]=IGAknotRefineCurve(knotU,weights,p,Refinement);
+addpath('./IGA_Grid_data/')
+addpath('./NURBS/')
+addpath('./quadrature/')
 
 
-% Ubreaks=unique(Ubar);
-
-% uNoEs=length(Ubreaks)-1;
 
 ele_dof=p+1;
 
