@@ -1,11 +1,11 @@
 function  [u_h_g1,u_h_g2,err] = biharmonic_L2_project2dirichlet_bnd(ConPts,weights,knotU,pu,knotV,pv,Refinement,t,g1,g2)
 % The dimension of ConPts is 
 
-addpath('~/Codes/IGA_Codes/IGA_needed_NURBS/IGA_Grid_data/')
-addpath('~/Codes/IGA_Codes/IGA_needed_NURBS/NURBS/')
-addpath('~/Codes/IGA_Codes/IGA_needed_NURBS/quadrature/')
+addpath('./IGA_Grid_data/')
+addpath('./NURBS/')
+addpath('./quadrature/')
 
-% g1=@(x,y)sin(pi*x+1)*sin(pi*y+1);% u = g1 on $\partial \Omega$.
+% g1=@(x,y) sin(pi*x+1)*sin(pi*y+1);% u = g1 on $\partial \Omega$.
 % g2=@(x,y) sin(pi*x+1)*sin(pi*y+1); % grad u \cdot n =g2  on $\partial \Omega$.
 
 
