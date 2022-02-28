@@ -17,9 +17,9 @@ function [err,dof]=Iga2d_poission(ConPts,weights,knotU,pu,knotV,pv,Refinement,t,
 % ultimate degree of NURBS  basis functions is (pu+t) in u direction, and
 % (pv+t) in the v direction;
 
-addpath('~/Codes/IGA_Codes/IGA_needed_NURBS/IGA_Grid_data/')
-addpath('~/Codes/IGA_Codes/IGA_needed_NURBS/NURBS/')
-addpath('~/Codes/IGA_Codes/IGA_needed_NURBS/quadrature/')
+addpath('./IGA_Grid_data/')
+addpath('./NURBS/')
+addpath('./quadrature/')
 
 
 
