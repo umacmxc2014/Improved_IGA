@@ -37,7 +37,7 @@ dof=zeros(n_refine,1);
  [err(i,:),dof(i)]=Iga2d_biharmonic(ConPts,weights,knotU,pu,knotV,pv,Refinement(i),t, test_case);
  end
  disp('================================================================')
- disp(['The L2 norm error            ||       The H1 norm error       || The Laplacian u - Laplacian u_h'])
+ disp(['The L2 norm error            ||       The H1 semi norm error       || The H2 semi norm error'])
  
  disp('----------------------------------------------------------------')
  disp([err])
