@@ -91,7 +91,7 @@ Time=zeros(n_refine,1);
 
 
  disp('================================================================')
- disp(['The L2 norm error            ||       The H1 norm error       || The Laplacian u - Laplacian u_h'])
+ disp(['The L2 norm error            ||       The H1 semi norm error       || The H2 semi norm error'])
  format short e 
  disp('----------------------------------------------------------------')
  disp([err])
