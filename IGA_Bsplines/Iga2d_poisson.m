@@ -42,12 +42,7 @@ u_grad=@(x,y) [ y^2*(2*x*sin(pi*(x.^2+y.^2-2)) +2*pi*x^3*cos(pi*(x.^2+y.^2-2))) 
                x^2*(2*y*sin(pi*(x.^2+y.^2-2)) +2*pi*y^3*cos(pi*(x.^2+y.^2-2))) ] ;
     
        
-% u_Exact=@(x,y)  x.^2.*y.^2*(x.^2+y.^2-2);% Exact solution of Poisson equation;
-% f=@(x,y) -(20*x^2*y^2 + 2*x^2*(x^2 + y^2 - 2) + 2*y^2*(x^2 + y^2 - 2));% The right hand side of Poisson equation;
-% u_d=@(x,y) x.^2.*y.^2*(x.^2+y.^2-2);
-
-% u_grad=@(x,y) [y^2*(2*x*(x^2+y^2-2) +2*x^3), ...
-%               x^2*(2*y*(y^2+x^2-2) +2*y^3)] ;
+ 
     
 end
 
