@@ -48,20 +48,10 @@ end
 
 if   strcmp(test_case,'quarter')
   
- % u_Exact=@(x,y) x.^2.*y.^2.*(x.^2+y.^2-2).^2.*(x.^2+y.^2-1/2);
- % f=@(x,y)1152*x^2*y^4 + 1152*x^4*y^2 + 64*x^4*(x^2 + y^2 - 2) + 32*x^4*(x^2 + y^2 - 1/2) + 64*y^4*(x^2 + y^2 - 2) + 32*y^4*(x^2 + y^2 - 1/2) + 64*x^2*(x^2 + y^2 - 2)^2 + 64*y^2*(x^2 + y^2 - 2)^2 + 8*(x^2 + y^2 - 2)^2*(x^2 + y^2 - 1/2) + 2048*x^2*y^2*(x^2 + y^2 - 2) + 1024*x^2*y^2*(x^2 + y^2 - 1/2) + 128*x^2*(x^2 + y^2 - 2)*(x^2 + y^2 - 1/2) + 128*y^2*(x^2 + y^2 - 2)*(x^2 + y^2 - 1/2);
 
-
- % g1=@(x,y) x.^2.*y.^2.*(x.^2+y.^2-2).^2.*(x.^2+y.^2-1/2);
-  
- % g2=@(x,y) -sqrt(2)*x.*(2*x^3*y^2*(x^2 + y^2 - 2)^2 + 2*x*y^2*(x^2 + y^2 - 2)^2*(x^2 + y^2 - 1/2) +...
- %    4*x^3*y^2*(x^2 + y^2 - 2)*(x^2 + y^2 - 1/2) ) -...
-%      sqrt(2)*y.*(2*x^2*y^3*(x^2 + y^2 - 2)^2 + 2*x^2*y*(x^2 + y^2 - 2)^2*(x^2 +...
- %     y^2 - 1/2) + 4*x^2*y^3*(x^2 + y^2 - 2)*(x^2 + y^2 - 1/2) );
  
 u_Exact=@(x,y) x.^2.*y.^2.*sin(pi*(x.^2+y.^2-2)).*sin(pi*(x.^2+y.^2-2));
 
-% f=@(x,y)8*sin(pi*(x^2 + y^2 - 2))^2 + 32*x^4*pi^2*cos(pi*(x^2 + y^2 - 2))^2 + 32*y^4*pi^2*cos(pi*(x^2 + y^2 - 2))^2 - 32*x^4*pi^2*sin(pi*(x^2 + y^2 - 2))^2 - 32*y^4*pi^2*sin(pi*(x^2 + y^2 - 2))^2 + 1024*x^2*y^2*pi^2*cos(pi*(x^2 + y^2 - 2))^2 - 128*x^2*y^6*pi^4*cos(pi*(x^2 + y^2 - 2))^2 - 256*x^4*y^4*pi^4*cos(pi*(x^2 + y^2 - 2))^2 - 128*x^6*y^2*pi^4*cos(pi*(x^2 + y^2 - 2))^2 - 1024*x^2*y^2*pi^2*sin(pi*(x^2 + y^2 - 2))^2 + 128*x^2*y^6*pi^4*sin(pi*(x^2 + y^2 - 2))^2 + 256*x^4*y^4*pi^4*sin(pi*(x^2 + y^2 - 2))^2 + 128*x^6*y^2*pi^4*sin(pi*(x^2 + y^2 - 2))^2 + 128*pi*x^2*cos(pi*(x^2 + y^2 - 2))*sin(pi*(x^2 + y^2 - 2)) + 128*pi*y^2*cos(pi*(x^2 + y^2 - 2))*sin(pi*(x^2 + y^2 - 2)) - 1536*x^2*y^4*pi^3*cos(pi*(x^2 + y^2 - 2))*sin(pi*(x^2 + y^2 - 2)) - 1536*x^4*y^2*pi^3*cos(pi*(x^2 + y^2 - 2))*sin(pi*(x^2 + y^2 - 2));
 
 
   f=@(x,y)4*(256*pi^2*x^2*y^2 + 8*pi^2*(x^4+y^4)-32*pi^4*x^2*y^2*(x^2+y^2)^2-1) *cos(2*pi*(x^2+y^2-2))+...
@@ -85,12 +75,11 @@ end
 
 [u_h_g1,u_h_g2,err] = biharmonic_L2_project2dirichlet_bnd(ConPts,weights,knotU,pu,knotV,pv,Refinement,t,g1,g2);
 
-disp('error_proj=')
-disp(err)
+% disp('error_proj=')
+% disp(err)
 
 
 
-% f=@(x,y) -2*(sin(r(x,y)) + 4*x^2*cos(r(x,y)) + sin(r(x,y)) + 4*y^2*cos(r(x,y)) ); % The right hand side of Poisson equation;
 
 if t>=1% if t>=1, the degree of NURBS basis fucntions is elevated to (pu+t) in u direction and to (pv+t) in the v direction;
     
@@ -99,7 +88,6 @@ ConPts=Q;weights=wbar;knotU=Ubar;knotV=Vbar;
  pu=pu+t;pv=pv+t; 
 end
 
-% [Element,Coordinate,knotSpanIndex,Ubar,Vbar,m,n,Qw,NoEs,dof]=Iga_2d_grid(knotU,pu,knotV,pv,weights,Refinement);
 
 
 nurbsInfo=Iga_2d_grid(knotU,pu,knotV,pv,weights,Refinement);
