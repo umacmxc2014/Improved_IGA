@@ -52,30 +52,34 @@ end
 
 if strcmp(test_case,'quarter')
 
-    t=0;
-    
-
-    
-  Refinement=7*ones(1,5);
-%  Refinement=[1,2,3,4,5,6];
-% Refinement=[7,8];
-
-n_refine=length(Refinement);
-
-
-for i=1: n_refine
-tic
 ConPts=zeros(3,3,2);
 r=sqrt(2)/2; R=sqrt(2); rR=(r+R)/2;
 
 ConPts(:,:,1)=[0 0 0;r rR R;r rR  R]; ConPts(:,:,2)=[r rR R;r rR R;0 0 0];
 weights=[2 2 2;1 1 1;1 1 1];
- knotU=[0 0  0 1 1 1];knotV=[0 0 0 1 1 1];
+knotU=[0 0  0 1 1 1];knotV=[0 0 0 1 1 1];
 pu=2;pv=2;
+
+
+t=0;  % Elevate the degree of B-splines to (pu+t).
+    
+
+
+
+
+Refinement=[1,2,3,4,5,6];
+
+% Refinement=[7,8];
+
+n_refine=length(Refinement);
 
 err=zeros(n_refine,2);
 dof=zeros(n_refine,1);
 Time=zeros(n_refine,1);
+
+
+for i=1: n_refine
+tic
     [err(i,:),dof(i)]=Iga2d_poisson(ConPts,weights,knotU,pu,knotV,pv,Refinement(i),t,test_case);
   %  dof(i)
 toc
