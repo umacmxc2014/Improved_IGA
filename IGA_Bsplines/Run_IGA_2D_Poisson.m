@@ -81,7 +81,6 @@ Time=zeros(n_refine,1);
 for i=1: n_refine
 tic
     [err(i,:),dof(i)]=Iga2d_poisson(ConPts,weights,knotU,pu,knotV,pv,Refinement(i),t,test_case);
-  %  dof(i)
 toc
 end
 
